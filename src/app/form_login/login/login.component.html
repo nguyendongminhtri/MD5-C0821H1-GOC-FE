@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0;">
+                <form class="form-login" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
+                    <mat-error *ngIf="isCheckLoginFailed" class="alert alert-primary">{{status}}</mat-error>
+                    <!--USERNAME -->
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Username: </mat-label>
+                        <input matInput placeholder="Username ..." name="username" [(ngModel)]="form.username" #username="ngModel" minlength="3" maxlength="50" required>
+                        <mat-icon color="accent" matSuffix>account_circle</mat-icon>
+                        <mat-error *ngIf="username.hasError('required')">The username is required!</mat-error>
+                        <mat-error *ngIf="username.hasError('minlength')">The username must more than 3 character!</mat-error>
+                    </mat-form-field><br>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Enter your password</mat-label>
+                        <input name="password" [(ngModel)]="form.password" minlength="6" maxlength="10" #password="ngModel" matInput [type]="hide ? 'password' : 'text'" required>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon color="accent">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="password.hasError('required')">The username is required!</mat-error>
+                        <mat-error *ngIf="password.hasError('minlength')">The username must more than 6 character!</mat-error>
+                    </mat-form-field><br>
+                    <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-success">Login
+                        <mat-icon color="accent" matSuffix>login</mat-icon>
+                    </button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>
