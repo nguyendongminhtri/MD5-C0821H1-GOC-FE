@@ -181,4 +181,7 @@ export class HomeComponent {
     this.msaapDisablePositionSlider = event.checked;
   }
   // End: Required for demo purpose
+  onChangeAvatar($event: string) {
+    console.log('avatar ---> ', $event);
+  }
 }

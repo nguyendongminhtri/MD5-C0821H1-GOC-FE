@@ -18,12 +18,14 @@ import {TokenService} from '../../service/token.service';
 export class NavBarComponent implements OnInit{
   name: any;
   isCheckLogin = false;
+  avatar: any;
   constructor(private tokenService: TokenService) {
   }
   ngOnInit(): void {
     if(this.tokenService.getTokenKey()){
       this.isCheckLogin = true;
       this.name = this.tokenService.getNameKey();
+      this.avatar = this.tokenService.getAvatarKey();
     }
   }
 

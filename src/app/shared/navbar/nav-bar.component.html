@@ -17,6 +17,7 @@
     <span>{{name}}</span>
   </a>
   <div class="flex-spacer"></div>
+  <img routerLink="change-avatar" class="image" *ngIf="isCheckLogin" [src]="avatar">
   <app-theme-picker></app-theme-picker>
   <a mat-button class="docs-button docs-navbar-hide-small" target="_blank" href="https://github.com/nguyendongminhtri/MD5-C0821H1-GOC-FE.git"
     aria-label="GitHub Repository">

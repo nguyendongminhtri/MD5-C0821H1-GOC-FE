@@ -1,0 +1,9 @@
+<div>
+    <input type="file" (change)="onFileChanged($event)">
+    <mat-spinner *ngIf="checkUploadFile"></mat-spinner>
+<!--    <button *ngIf="downloadURL?!selectedFile:selectedFile" mat-stroked-button color="accent"-->
+<!--            class="mat-button-toggle-group btn-outline-success" (click)="onUpload()">Upload Avatar</button>-->
+    <div *ngIf="downloadURL" style="margin-bottom: 10px; margin-top: 10px">
+        <img [src]="downloadURL" style="width: 300px; height: auto">
+    </div>
+</div>

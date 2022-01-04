@@ -27,12 +27,20 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './form_login/login/login.component';
 import { UserAccountComponent } from './form_login/user-account/user-account.component';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment.prod';
+import { UploadAvatarComponent } from './upload/upload-avatar/upload-avatar.component';
+import {httpInterceptorProvider} from './secuirty/auth.interceptor';
+import { ChangeAvatarComponent } from './manage-profile/change-avatar/change-avatar.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   {path: 'user-account', component: UserAccountComponent},
+  {path: 'change-avatar', component: ChangeAvatarComponent},
   {
     path: 'guide/getting-started',
     component: GettingStartedComponent,
@@ -41,7 +49,7 @@ export const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent],
+  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, UploadAvatarComponent, ChangeAvatarComponent],
   imports: [
     FormsModule,
     HttpClientModule,
@@ -57,9 +65,11 @@ export const appRoutes: Routes = [
     NavBarModule, FooterModule,
     MatInputModule,
     NgxAudioPlayerModule,
-    RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule, ReactiveFormsModule
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule, ReactiveFormsModule, MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [httpInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {
