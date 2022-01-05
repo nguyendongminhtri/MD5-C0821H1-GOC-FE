@@ -1,39 +1,51 @@
 <nav class="docs-navbar-header" aria-label="Top Toolbar">
-  <a mat-button class="docs-button" routerLink="/" aria-label="Angular Material">
-    <img class="docs-angular-logo" src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/angular-white-transparent.svg"
-      alt="">
-    <span>Audio Player</span>
-  </a>
-  <a *ngIf="!isCheckLogin" mat-button class="docs-button" routerLink="register" aria-label="Angular Material">
-    <mat-icon color="accent">manage_accounts</mat-icon>
-    <span>Register</span>
-  </a>
-  <a *ngIf="!isCheckLogin" mat-button class="docs-button" routerLink="login" aria-label="Angular Material">
-    <mat-icon color="accent">login</mat-icon>
-    <span>Login</span>
-  </a>
-  <a *ngIf="isCheckLogin" mat-button class="docs-button" routerLink="login" aria-label="Angular Material">
-    <mat-icon color="accent">favorite</mat-icon>
-    <span>{{name}}</span>
-  </a>
-  <div class="flex-spacer"></div>
-  <img routerLink="change-avatar" class="image" *ngIf="isCheckLogin" [src]="avatar">
-  <app-theme-picker></app-theme-picker>
-  <a mat-button class="docs-button docs-navbar-hide-small" target="_blank" href="https://github.com/nguyendongminhtri/MD5-C0821H1-GOC-FE.git"
-    aria-label="GitHub Repository">
-    <img class="docs-angular-logo" src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/github-circle-white-transparent.svg"
-      alt="">
-    Front End
-  </a>
-  <a mat-button class="docs-button docs-navbar-hide-small" target="_blank" href="https://github.com/nguyendongminhtri/MD5-C0821H1-GOC-BE"
-     aria-label="GitHub Repository">
-    <img class="docs-angular-logo" src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/github-circle-white-transparent.svg"
-         alt="">
-    Back End
-  </a>
-  <a mat-icon-button class="docs-button docs-navbar-show-small" href="https://github.com/vmudigal/ngx-audio-player"
-    aria-label="GitHub Repository">
-    <img class="docs-angular-logo" src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/github-circle-white-transparent.svg"
-      alt="">
-  </a>
+    <a mat-button class="docs-button" routerLink="/" aria-label="Angular Material">
+        <img class="docs-angular-logo"
+             src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/angular-white-transparent.svg"
+             alt="">
+        <span>Audio Player</span>
+    </a>
+    <a *ngIf="!isCheckLogin" mat-button class="docs-button" routerLink="register" aria-label="Angular Material">
+        <mat-icon color="accent">manage_accounts</mat-icon>
+        <span>Register</span>
+    </a>
+    <a *ngIf="!isCheckLogin" mat-button class="docs-button" routerLink="login" aria-label="Angular Material">
+        <mat-icon color="accent">login</mat-icon>
+        <span>Login</span>
+    </a>
+    <a *ngIf="isCheckLogin" mat-button class="docs-button" routerLink="login" aria-label="Angular Material">
+        <mat-icon color="accent">favorite</mat-icon>
+        <span>{{name}}</span>
+    </a>
+    <a mat-button class="docs-button" routerLink="create-category" aria-label="Angular Material">
+        <img src="../../../assets/images/icons/create-category.png" height="20" width="20"/><span>Create Category</span>
+    </a>
+    <a mat-button class="docs-button" routerLink="list-category" aria-label="Angular Material">
+        <span>List Category</span>
+    </a>
+    <div class="flex-spacer"></div>
+    <img routerLink="change-avatar" class="image" *ngIf="isCheckLogin" [src]="avatar">
+    <app-theme-picker></app-theme-picker>
+    <a mat-button class="docs-button docs-navbar-hide-small" target="_blank"
+       href="https://github.com/nguyendongminhtri/MD5-C0821H1-GOC-FE.git"
+       aria-label="GitHub Repository">
+        <img class="docs-angular-logo"
+             src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/github-circle-white-transparent.svg"
+             alt="">
+        Front End
+    </a>
+    <a mat-button class="docs-button docs-navbar-hide-small" target="_blank"
+       href="https://github.com/nguyendongminhtri/MD5-C0821H1-GOC-BE"
+       aria-label="GitHub Repository">
+        <img class="docs-angular-logo"
+             src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/github-circle-white-transparent.svg"
+             alt="">
+        Back End
+    </a>
+    <a mat-icon-button class="docs-button docs-navbar-show-small" href="https://github.com/vmudigal/ngx-audio-player"
+       aria-label="GitHub Repository">
+        <img class="docs-angular-logo"
+             src="https://raw.githubusercontent.com/vmudigal/ngx-audio-player/master/src/assets/images/logos/angular/github-circle-white-transparent.svg"
+             alt="">
+    </a>
 </nav>

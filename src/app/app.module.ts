@@ -34,6 +34,10 @@ import { UploadAvatarComponent } from './upload/upload-avatar/upload-avatar.comp
 import {httpInterceptorProvider} from './secuirty/auth.interceptor';
 import { ChangeAvatarComponent } from './manage-profile/change-avatar/change-avatar.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CreateCategoryComponent } from './categoryManage/create-category/create-category.component';
+import { ListCategoryComponent } from './categoryManage/list-category/list-category.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
@@ -41,6 +45,8 @@ export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent},
   {path: 'user-account', component: UserAccountComponent},
   {path: 'change-avatar', component: ChangeAvatarComponent},
+  {path: 'create-category', component: CreateCategoryComponent},
+  {path: 'list-category', component: ListCategoryComponent},
   {
     path: 'guide/getting-started',
     component: GettingStartedComponent,
@@ -49,7 +55,7 @@ export const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, UploadAvatarComponent, ChangeAvatarComponent],
+  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, UploadAvatarComponent, ChangeAvatarComponent, CreateCategoryComponent, ListCategoryComponent],
   imports: [
     FormsModule,
     HttpClientModule,
@@ -67,7 +73,7 @@ export const appRoutes: Routes = [
     NgxAudioPlayerModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule, ReactiveFormsModule, MatProgressSpinnerModule
+    RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule, ReactiveFormsModule, MatProgressSpinnerModule, MatPaginatorModule, MatTableModule
   ],
   providers: [httpInterceptorProvider],
   bootstrap: [AppComponent]

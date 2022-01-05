@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0;">
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource">
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> No. </th>
+                            <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="nameCategory">
+                            <th mat-header-cell *matHeaderCellDef> Name Category </th>
+                            <td mat-cell *matCellDef="let element"> {{element.nameCategory}} </td>
+                        </ng-container>
+
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="avatarCategory">
+                            <th mat-header-cell *matHeaderCellDef> Avatar </th>
+                            <td mat-cell *matCellDef="let element"><img  [src]="element.avatarCategory"> </td>
+                        </ng-container>
+
+                        <!-- Symbol Column -->
+<!--                        <ng-container matColumnDef="symbol">-->
+<!--                            <th mat-header-cell *matHeaderCellDef> Symbol </th>-->
+<!--                            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>-->
+<!--                        </ng-container>-->
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[3, 10, 20, 30]"
+                                   showFirstLastButtons
+                                   aria-label="Select page of periodic elements">
+                    </mat-paginator>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
